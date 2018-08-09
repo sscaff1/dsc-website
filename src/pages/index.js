@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import About from '../components/About';
+import Service from '../components/Service';
 
 const people = [
   {
@@ -84,6 +85,33 @@ const people = [
   },
 ];
 
+const services = [
+  {
+    id: 11,
+    title: 'Individual athlete development game analysis and action plan',
+    description:
+      'Players are guided on effective processes to analyze match film at the team and individual level.  These workflows will improve the players ability to recognize key player behaviors, significant tactical trends and strategies of an opponent. Additionally, players will gain critical feedback on key areas for individual improvement.  With this knowledge our coaches will take the time to guide players in creating a concrete action plan and consistent monitoring system in order to improve these areas throughout the developmental phases of a youth athlete.',
+  },
+  {
+    id: 12,
+    title: 'Self regulation training',
+    description:
+      'Youth Sport Programs have been recognized to have positive impact on youth development through helping young athletes to learn about themselves and to develop life skills.  These may include physical (e.g., healthy diet), behavioral (e.g., goal setting) or cognitive (e.g., self-talk). Many of these skills necessary to succeed in sport are transferable to other life contexts, including problem solving, time management, goal setting, coping with failures and performing under pressure. Our goal is to tailor a personal approach for each student-athlete to develop and incorporate self-regulation skills into their day-to-day lives on and off the field.',
+  },
+  {
+    id: 13,
+    title: 'Club curriculum & coach development',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus velit veniam alias? Inventore quia, totam perspiciatis suscipit error molestias consequuntur sequi temporibus qui perferendis nostrum harum recusandae, nihil tempora nulla.',
+  },
+  {
+    id: 14,
+    title: 'Individual and small group training',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni unde, culpa cum commodi ex ducimus. Optio facere dolor non id magnam sit ullam rerum, ut ab harum, similique, exercitationem nihil.',
+  },
+];
+
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
@@ -94,7 +122,7 @@ export default class IndexPage extends React.Component {
         <section className="hero is-primary">
           <div className="hero-body">
             <div className="container has-text-centered">
-              <h1 className="title is-primary-font">Vision</h1>
+              <h2 className="title is-primary-font">Vision</h2>
               <p>
                 District Sports Consultants was created with the vision to offer customized sport
                 solutions for youth athletes and athletic clubs that will help enhance the holistic
@@ -111,12 +139,33 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
         </section>
-        <section className="tile is-ancestor">
-          {people.map(person => (
-            <div key={person.id} className="tile">
-              <About person={person} />
+        <section className="hero">
+          <div className="hero-body">
+            <div className="container ">
+              <h2 className="title is-primary-font has-text-centered">About Us</h2>
+              <div className="columns">
+                {people.map(person => (
+                  <div key={person.id} className="column">
+                    <About person={person} />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
+        </section>
+        <section className="hero is-primary">
+          <div className="hero-body">
+            <div className="container">
+              <h2 className="title is-primary-font has-text-centered">What we do</h2>
+              <div className="level">
+                {services.map(service => (
+                  <div key={service.id} className="column">
+                    <Service service={service} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
       </Layout>
     );

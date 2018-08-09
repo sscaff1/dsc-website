@@ -7,7 +7,7 @@ import './all.scss';
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Helmet title="Ghost Rider Pictures">
+    <Helmet title="District Sports Consulting">
       <link
         rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"

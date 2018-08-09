@@ -34,6 +34,6 @@ module.exports = {
         stylesPath: `${__dirname}/src/components/all.sass`,
       },
     },
-    // 'gatsby-plugin-netlify', // make sure to keep it last in the array
+    'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 };
