@@ -1,0 +1,20 @@
+@import '../fonts/ethnocentric-stylesheet.css';
+@import '../fonts/slicker-stylesheet.css';
+
+$body-family: 'Slicker';
+$family-primary: 'EthnocentricRg-Regular';
+$primary: #990000;
+$text: #4d4d4d;
+$navbar-item-color: $text;
+$navbar-item-hover-color: $primary;
+$navbar-item-hover-background-color: transparent;
+
+@import '~bulma';
+
+.navbar-end .navbar-item:hover {
+  border-bottom: 2px solid $primary;
+}
+
+.is-primary-font {
+  font-family: $family-primary;
+}
