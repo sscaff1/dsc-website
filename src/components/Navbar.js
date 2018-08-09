@@ -24,6 +24,9 @@ const styles = {
     }
     .hero-body {
       z-index: 10;
+      img {
+        max-height: 150px;
+      }
     }
   `,
 };
