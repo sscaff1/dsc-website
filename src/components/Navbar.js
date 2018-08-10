@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { css } from 'react-emotion';
 import hero from '../img/hero.jpeg';
 import logo from '../img/LOGO.png';
+import smallLogo from '../img/LOGO1.png';
 
 const styles = {
   heroSection: css`
@@ -71,9 +72,9 @@ class Navbar extends Component {
             style={{ background: `rgba(255, 255, 255, ${backgroundColorTransparency})` }}
           >
             <div className="container">
-              <div className="navbar-brand">
+              <div className={`navbar-brand${activeClass}`}>
                 <a className="navbar-item">
-                  <img src={logo} alt="Logo" />
+                  <img src={smallLogo} alt="Logo" />
                 </a>
                 <span
                   className={`navbar-burger burger${activeClass}`}

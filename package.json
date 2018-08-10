@@ -5,7 +5,10 @@
   "author": "Steven Scaffidi<sscaff1@gmail.com>",
   "dependencies": {
     "bulma": "latest",
+    "emotion": "^9.2.6",
+    "emotion-server": "^9.2.6",
     "gatsby": "next",
+    "gatsby-plugin-emotion": "next",
     "gatsby-plugin-netlify": "next",
     "gatsby-plugin-netlify-cms": "next",
     "gatsby-plugin-react-helmet": "next",

@@ -4,16 +4,19 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import About from '../components/About';
 import Service from '../components/Service';
+import ContactForm from '../components/ContactForm';
+import HeroSection from '../components/HeroSection';
 
 const people = [
   {
     id: 1,
     name: 'John Bello',
+    email: 'john@districtsportsconsulting.com',
     title: 'Owner',
     picture: '',
     bio:
       'John began his professional career in sport working with D.C. United Academy as an age group head coach within Major League Soccer.  He has worked in all levels of youth development including grassroots programming,   Zone 1 Head Coach (U13-U15) and club curriculum development and implementation. John grew up in Sarasota, FL and began his youth playing career at IMG Soccer Academy.  He then attended and played Division 1 soccer at the College of Charleston in Charleston, South Carolina, while completing his undergraduate degree in Exercise Science in 2010.',
-    qualification: 'USSF A-Youth License:  Completed January 2018',
+    qualifications: 'USSF A-Youth License:  Completed January 2018',
     education: [
       {
         college: 'College of Charleston',
@@ -30,10 +33,17 @@ const people = [
         timeframe: '2017/2018',
       },
     ],
+    languages: [
+      {
+        name: 'English',
+        proficiency: 'Native reading, written, and oral fluency',
+      },
+    ],
   },
   {
     id: 2,
     name: 'Steven Nagy',
+    email: 'steven@districtsportsconsulting.com',
     title: 'Self Regulation Coach',
     picture: '',
     bio:
@@ -112,6 +122,14 @@ const services = [
   },
 ];
 
+const options = [
+  'Individual Athlete Development Game Analysis & Action Plan',
+  'Self Regulation Training',
+  'Club Curriculum & Coach Development',
+  'Individual & Small Group Training',
+  'Other',
+];
+
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
@@ -119,54 +137,60 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="hero is-primary">
-          <div className="hero-body">
-            <div className="container has-text-centered">
-              <h2 className="title is-primary-font">Vision</h2>
-              <p>
-                District Sports Consultants was created with the vision to offer customized sport
-                solutions for youth athletes and athletic clubs that will help enhance the holistic
-                development of the student-athlete within the current sport landscape in the United
-                States.
-              </p>
-              <p>
-                Our belief is that working within a “team” is the best vehicle for individual growth
-                and success. Through the combination of our staff, available resources and
-                technology, we take a personalized approach to individual development, focused on
-                sport specific training, social development, self regulation and education for
-                players, coaches and organizations.
-              </p>
-            </div>
+        <HeroSection title="Vision" containerClass="has-text-centered" wrapClass="is-primary">
+          <p>
+            District Sports Consultants was created with the vision to offer customized sport
+            solutions for youth athletes and athletic clubs that will help enhance the holistic
+            development of the student-athlete within the current sport landscape in the United
+            States.
+          </p>
+          <p>
+            Our belief is that working within a “team” is the best vehicle for individual growth and
+            success. Through the combination of our staff, available resources and technology, we
+            take a personalized approach to individual development, focused on sport specific
+            training, social development, self regulation and education for players, coaches and
+            organizations.
+          </p>
+        </HeroSection>
+        <HeroSection title="About Us">
+          <div className="tile is-ancestor">
+            {people.map(person => (
+              <div key={person.id} className="tile is-parent">
+                <About {...person} />
+              </div>
+            ))}
           </div>
-        </section>
-        <section className="hero">
-          <div className="hero-body">
-            <div className="container ">
-              <h2 className="title is-primary-font has-text-centered">About Us</h2>
-              <div className="columns">
-                {people.map(person => (
-                  <div key={person.id} className="column">
-                    <About person={person} />
-                  </div>
-                ))}
+        </HeroSection>
+        <HeroSection title="What We Do" wrapClass="is-primary">
+          <div className="tile is-ancestor">
+            {services.map(service => (
+              <div key={service.id} className="tile is-parent">
+                <Service service={service} />
+              </div>
+            ))}
+          </div>
+        </HeroSection>
+        <HeroSection title="Contact Us">
+          <div className="columns container" style={{ marginTop: '1.5rem' }}>
+            <ContactForm options={options} />
+            <div className="column is-1" />
+            <div className="column box is-4" style={{ marginBottom: '1.5rem' }}>
+              <h4 className="title has-text-centered">Contact Information:</h4>
+              <div className="content">
+                <a
+                  href="mailto:john@districtsportsconsulting.com"
+                  className="title is-5 has-text-link"
+                >
+                  <i className="fas fa-envelope" />&nbsp;&nbsp;john@districtsportsconsulting.com
+                </a>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12424.465502916695!2d-77.00336835781306!3d38.87557917318286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b9ccf2db5e87%3A0x3bdfd64eac350b14!2sNavy+Yard%2C+Washington%2C+DC!5e0!3m2!1sen!2sus!4v1533848295293"
+                  style={{ border: 0, width: '100%', height: '300px' }}
+                />
               </div>
             </div>
           </div>
-        </section>
-        <section className="hero is-primary">
-          <div className="hero-body">
-            <div className="container">
-              <h2 className="title is-primary-font has-text-centered">What we do</h2>
-              <div className="level">
-                {services.map(service => (
-                  <div key={service.id} className="column">
-                    <Service service={service} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        </HeroSection>
       </Layout>
     );
   }

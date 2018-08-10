@@ -1,7 +1,25 @@
 import React from 'react';
 
+const AboutSection = ({ title, childProp, children }) =>
+  childProp ? (
+    <>
+      <p className="has-text-weight-bold" style={{ marginBottom: 0 }}>
+        <u>{title}</u>
+      </p>
+      {children}
+    </>
+  ) : null;
+
 const About = ({
-  person: { name, title, picture, bio, qualifications, education, awards, languages },
+  name,
+  title,
+  picture,
+  bio,
+  qualifications,
+  education,
+  awards,
+  languages,
+  email,
 }) => {
   return (
     <div className="card">
@@ -18,20 +36,56 @@ const About = ({
             </figure>
           </div>
           <div className="media-content">
-            <p className="title is-4">John Smith</p>
-            <p className="subtitle is-6">@johnsmith</p>
+            <p className="title is-4">
+              {name} - {title}
+            </p>
+            <p className="subtitle is-6">
+              <a href={`mailto:${email}`}>{email}</a>
+            </p>
           </div>
         </div>
 
         <div className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.{' '}
-          <a>@bulmaio</a>.
-          <a href="#">#css</a> <a href="#">#responsive</a>
-          <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          <p>{bio}</p>
+          <AboutSection title="Qualifications" childProp={qualifications}>
+            <p className="is-marginless is-paddingless">{qualifications}</p>
+          </AboutSection>
+
+          <AboutSection title="Education" childProp={education.length}>
+            {education.map((e, i) => (
+              <p className="is-marginless is-paddingless" key={`education-${i}`}>
+                {e.college} ({e.location}) - {e.degree}{' '}
+                <span className="is-italic">({e.concentration})</span> - {e.timeframe}
+              </p>
+            ))}
+          </AboutSection>
+
+          <AboutSection title="Awards" childProp={awards.length}>
+            {awards.map((a, i) => (
+              <p className="is-marginless is-paddingless">
+                {a.name} - {a.timeframe}
+              </p>
+            ))}
+          </AboutSection>
+
+          <AboutSection title="Languages" childProp={languages.length}>
+            {languages.map((l, i) => (
+              <p className="is-marginless is-paddingless">
+                {l.name} - {l.proficiency}
+              </p>
+            ))}
+          </AboutSection>
         </div>
       </div>
     </div>
   );
+};
+
+About.defaultProps = {
+  qualifications: '',
+  education: [],
+  awards: [],
+  languages: [],
 };
 
 export default About;
