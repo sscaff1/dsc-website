@@ -36,7 +36,7 @@ class ContactForm extends Component {
             <textarea className="textarea is-large" type="text" placeholder="Custom Message" />
           </div>
         </div>
-        <div data-netlify-recaptcha="true" />
+        <div data-netlify-recaptcha />
         <input type="submit" className="button is-large is-fullwidth is-primary" value="Submit" />
       </form>
     );

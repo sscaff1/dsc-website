@@ -62,7 +62,7 @@ const About = ({
 
           <AboutSection title="Awards" childProp={awards.length}>
             {awards.map((a, i) => (
-              <p className="is-marginless is-paddingless">
+              <p key={`award-${i}`} className="is-marginless is-paddingless">
                 {a.name} - {a.timeframe}
               </p>
             ))}
@@ -70,7 +70,7 @@ const About = ({
 
           <AboutSection title="Languages" childProp={languages.length}>
             {languages.map((l, i) => (
-              <p className="is-marginless is-paddingless">
+              <p key={`language-${i}`} className="is-marginless is-paddingless">
                 {l.name} - {l.proficiency}
               </p>
             ))}
