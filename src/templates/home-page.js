@@ -133,6 +133,7 @@ const options = [
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
+    console.log(data);
     const { edges: posts } = data.allMarkdownRemark;
 
     return (
@@ -208,7 +209,7 @@ export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
     ) {
       edges {
         node {
@@ -218,9 +219,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
+            vision
           }
         }
       }

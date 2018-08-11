@@ -29,14 +29,14 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/index/index.md"
+      - file: "src/pages/index.md"
         label: "Index"
         name: "index"
         fields: 
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: Vision, name: vision, widget: markdown}
           - label: "Team Members"
-            name: member
+            name: members
             widget: list
             fields:
               - {label: Name, name: name, widget: string}
@@ -44,4 +44,28 @@ collections:
               - {label: Title, name: title, widget: string}
               - {label: Bio, name: bio, widget: markdown}
               - {label: Photo, name: photo, widget: image}
+              - {label: Qualifications, name: qualifications, widget: string}
+              - label: Education
+                name: education
+                widget: list
+                fields:
+                  - {label: Order, name: order, widget: number, valueType: int}
+                  - {label: College, name: college, widget: string}
+                  - {label: location, name: location, widget: string}
+                  - {label: Degree, name: degree, widget: string}
+                  - {label: Concentration, name: concentration, widget: string}
+                  - {label: Timeframe, name: timeframe, widget: string}
+              - label: Awards
+                name: awards
+                widget: list
+                fields:
+                  - {label: Name, name: name, widget: string}
+                  - {label: Timeframe, name: timeframe, widget: string}
+              - label: Languages
+                name: languages
+                widget: list
+                required: false
+                fields:
+                  - {label: Name, name: name, widget: string}
+                  - {label: Proficiency, name: proficiency, widget: string}
       
