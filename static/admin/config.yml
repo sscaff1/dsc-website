@@ -30,8 +30,8 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
       - file: "src/pages/index.md"
-        label: "Index"
-        name: "index"
+        label: "Home"
+        name: "home"
         fields: 
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: Vision, name: vision, widget: markdown}
@@ -43,8 +43,8 @@ collections:
               - {label: Email, name: email, widget: string}
               - {label: Title, name: title, widget: string}
               - {label: Bio, name: bio, widget: markdown}
-              - {label: Photo, name: photo, widget: image}
-              - {label: Qualifications, name: qualifications, widget: string}
+              - {label: Photo, name: photo, widget: image, required: false}
+              - {label: Qualifications, name: qualifications, widget: string, required: false}
               - label: Education
                 name: education
                 widget: list
@@ -58,6 +58,7 @@ collections:
               - label: Awards
                 name: awards
                 widget: list
+                required: false
                 fields:
                   - {label: Name, name: name, widget: string}
                   - {label: Timeframe, name: timeframe, widget: string}

@@ -206,22 +206,10 @@ IndexPage.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { eq: "home-page" } } }
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 400)
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            vision
-          }
-        }
+  query IndexQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        vision
       }
     }
   }
