@@ -1,4 +1,5 @@
 import React from 'react';
+import Content from './Content';
 
 const AboutSection = ({ title, childProp, children }) =>
   childProp ? (
@@ -46,7 +47,7 @@ const About = ({
         </div>
 
         <div className="content">
-          <p>{bio}</p>
+          <p dangerouslySetInnerHTML={{ __html: bio }} />
           <AboutSection title="Qualifications" childProp={qualifications}>
             <p className="is-marginless is-paddingless">{qualifications}</p>
           </AboutSection>

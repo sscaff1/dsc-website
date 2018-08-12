@@ -1,72 +1,83 @@
 backend:
-    name: github
-    repo: sscaff1/dsc-website
+  name: github
+  repo: sscaff1/dsc-website
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'src/pages/blog'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
 
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: 'src/pages/about/index.md'
+        label: 'About'
+        name: 'about'
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/index.md"
-        label: "Home"
-        name: "home"
-        fields: 
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
-          - {label: Vision, name: vision, widget: markdown}
-          - label: "Team Members"
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'about-page' }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file: 'src/pages/index.md'
+        label: 'Home'
+        name: 'home'
+        fields:
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'home-page' }
+          - { label: Title, name: title, widget: hidden, default: Home }
+          - { label: Vision, name: vision, widget: markdown }
+          - label: 'Team Members'
             name: members
             widget: list
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Email, name: email, widget: string}
-              - {label: Title, name: title, widget: string}
-              - {label: Bio, name: bio, widget: markdown}
-              - {label: Photo, name: photo, widget: image, required: false}
-              - {label: Qualifications, name: qualifications, widget: string, required: false}
+              - { label: Name, name: name, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Bio, name: bio, widget: markdown }
+              - { label: Photo, name: photo, widget: image, required: false }
+              - { label: Qualifications, name: qualifications, widget: string, required: false }
               - label: Education
                 name: education
                 widget: list
                 fields:
-                  - {label: Order, name: order, widget: number, valueType: int}
-                  - {label: College, name: college, widget: string}
-                  - {label: location, name: location, widget: string}
-                  - {label: Degree, name: degree, widget: string}
-                  - {label: Concentration, name: concentration, widget: string}
-                  - {label: Timeframe, name: timeframe, widget: string}
+                  - { label: Order, name: order, widget: number, valueType: int }
+                  - { label: College, name: college, widget: string }
+                  - { label: Location, name: location, widget: string }
+                  - { label: Degree, name: degree, widget: string }
+                  - { label: Concentration, name: concentration, widget: string }
+                  - { label: Timeframe, name: timeframe, widget: string }
               - label: Awards
                 name: awards
                 widget: list
                 required: false
                 fields:
-                  - {label: Name, name: name, widget: string}
-                  - {label: Timeframe, name: timeframe, widget: string}
+                  - { label: Name, name: name, widget: string }
+                  - { label: Timeframe, name: timeframe, widget: string }
               - label: Languages
                 name: languages
                 widget: list
                 required: false
                 fields:
-                  - {label: Name, name: name, widget: string}
-                  - {label: Proficiency, name: proficiency, widget: string}
-      
+                  - { label: Name, name: name, widget: string }
+                  - { label: Proficiency, name: proficiency, widget: string }
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: title, name: title, widget: string }
+              - { label: description, name: description, widget: markdown }
+          - label: 'Contact Us Options'
+            name: options
+            widget: list
+            fields:
+              - { label: Option, name: option, widget: string }

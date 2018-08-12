@@ -26,7 +26,9 @@ class ContactForm extends Component {
             <div className="select is-large is-fullwidth">
               <select>
                 <option value="-1">Please Select a Subject</option>
-                {options.map((option, i) => <option key={`select-${i}`}>{option}</option>)}
+                {options.map(({ option }, i) => (
+                  <option key={`select-${i}`}>{option}</option>
+                ))}
               </select>
             </div>
           </div>
