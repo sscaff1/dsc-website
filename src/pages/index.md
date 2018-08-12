@@ -7,11 +7,11 @@ vision: >-
   landscape in the United States.
 
 
-  Our belief is that working within a “team” is the best vehicle for individual
-  growth and success. Through the combination of our staff, available resources
-  and technology, we take a personalized approach to individual development,
-  focused on sport specific training, social development, self regulation and
-  education for players, coaches and organizations.
+  **Our belief** is that working within a “team” is the best vehicle for
+  individual growth and success. Through the combination of our staff, available
+  resources and technology, we take a personalized approach to individual
+  development, focused on sport specific training, social development, self
+  regulation and education for players, coaches and organizations.
 members:
   - awards:
       - name: US Soccer Development Academy U15 Coach of The Year Eastern Conference
