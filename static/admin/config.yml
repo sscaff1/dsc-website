@@ -26,9 +26,9 @@ collections:
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'about' }
       - { label: Name, name: name, widget: string }
-      - { label: Email, name: email, widget: string }
+      - { label: Email, name: email, widget: string, required: false }
       - { label: Title, name: title, widget: string }
-      - { label: Bio, name: bio, widget: markdown }
+      - { label: Bio, name: body, widget: markdown }
       - { label: Photo, name: photo, widget: image, required: false }
       - { label: Qualifications, name: qualifications, widget: string, required: false }
       - label: Education
@@ -63,7 +63,7 @@ collections:
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'service-page' }
       - { label: title, name: title, widget: string }
-      - { label: description, name: description, widget: markdown }
+      - { label: description, name: body, widget: markdown }
 
   - name: 'pages'
     label: 'Pages'
@@ -84,4 +84,4 @@ collections:
         fields:
           - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'home-page' }
           - { label: Title, name: title, widget: hidden, default: Home }
-          - { label: Vision, name: vision, widget: markdown }
+          - { label: Vision, name: body, widget: markdown }
