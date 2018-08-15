@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import AboutPageTemplate from '../components/AboutPageTemplate';
-import { HTMLContent } from '../components/Content';
 
-const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data;
-
+const AboutPage = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
+  const members = edges.map(edge => ({
+    ...edge.node.frontmatter,
+    bio: edge.node.html,
+  }));
   return (
     <Layout>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
-      />
+      <AboutPageTemplate members={members} />
     </Layout>
   );
 };
@@ -26,11 +27,33 @@ AboutPage.propTypes = {
 export default AboutPage;
 
 export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
+  query AboutPage {
+    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "member-section" } } }) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+            name
+            awards {
+              name
+              timeframe
+            }
+            education {
+              college
+              concentration
+              degree
+              location
+              timeframe
+            }
+            email
+            photo
+            languages {
+              name
+              proficiency
+            }
+          }
+        }
       }
     }
   }

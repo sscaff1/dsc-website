@@ -1,21 +1,13 @@
 import React from 'react';
 import HeroSection from './HeroSection';
+import Service from './Service';
 
 const HomePageTemplate = ({ vision, members, services, options }) => (
   <>
     <HeroSection title="Vision" containerClass="has-text-centered" wrapClass="is-primary">
       <p dangerouslySetInnerHTML={{ __html: vision }} />
     </HeroSection>
-    {/* <HeroSection title="About Us">
-      <div className="tile is-ancestor">
-        {members.map((person, i) => (
-          <div key={`person-${i}`} className="tile is-parent">
-            <About {...person} />
-          </div>
-        ))}
-      </div>
-    </HeroSection>
-    <HeroSection title="What We Do" wrapClass="is-primary">
+    <HeroSection title="What We Do">
       <div className="tile is-ancestor">
         {services.map((service, i) => (
           <div key={`service-${i}`} className="tile is-parent">
@@ -23,7 +15,7 @@ const HomePageTemplate = ({ vision, members, services, options }) => (
           </div>
         ))}
       </div>
-    </HeroSection> */}
+    </HeroSection>
   </>
 );
 

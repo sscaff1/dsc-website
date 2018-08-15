@@ -1,5 +1,4 @@
 import React from 'react';
-import Content from './Content';
 
 const AboutSection = ({ title, childProp, children }) =>
   childProp ? (
@@ -11,10 +10,10 @@ const AboutSection = ({ title, childProp, children }) =>
     </>
   ) : null;
 
-const About = ({
+const MemberTemplate = ({
   name,
   title,
-  picture,
+  photo,
   bio,
   qualifications,
   education,
@@ -26,14 +25,18 @@ const About = ({
     <div className="card">
       <div className="card-image">
         <figure className="image is-4by3">
-          <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
+          <img src={photo || 'https://bulma.io/images/placeholders/1280x960.png'} alt={name} />
         </figure>
       </div>
       <div className="card-content">
         <div className="media">
           <div className="media-left">
-            <figure className="image is-48x48">
-              <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+            <figure className="image is-64x64">
+              <img
+                src={photo || 'https://bulma.io/images/placeholders/96x96.png'}
+                alt={name}
+                className="is-rounded"
+              />
             </figure>
           </div>
           <div className="media-content">
@@ -82,11 +85,11 @@ const About = ({
   );
 };
 
-About.defaultProps = {
+MemberTemplate.defaultProps = {
   qualifications: '',
   education: [],
   awards: [],
   languages: [],
 };
 
-export default About;
+export default MemberTemplate;

@@ -1,5 +1,5 @@
 ---
-templateKey: member
+templateKey: member-section
 name: John Bello
 email: john@districtsportsconsulting.com
 title: Owner

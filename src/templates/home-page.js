@@ -9,13 +9,20 @@ export default class IndexPage extends React.Component {
     const {
       data: {
         markdownRemark: { html },
+        allMarkdownRemark: { edges },
       },
     } = this.props;
-    console.log(this.props.data);
+    const services = edges.map(({ node }) => {
+      const { title } = node.frontmatter;
+      return {
+        title,
+        description: node.html,
+      };
+    });
 
     return (
-      <Layout>
-        <HomePageTemplate vision={html} services={[]} />
+      <Layout contactFormIsPrimary>
+        <HomePageTemplate vision={html} services={services} />
       </Layout>
     );
   }
@@ -33,6 +40,16 @@ export const pageQuery = graphql`
   query IndexQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
+    }
+    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "service-section" } } }) {
+      edges {
+        node {
+          html
+          frontmatter {
+            title
+          }
+        }
+      }
     }
   }
 `;

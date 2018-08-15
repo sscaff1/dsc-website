@@ -1,5 +1,5 @@
 ---
-templateKey: 'member'
+templateKey: member-section
 awards:
   - name: Distinguished Achievement Award for Educational Excellence presented by The Association of Educational Publishers for Sweetgrass Science article, recognized by the National Science Teachers Association
     timeframe: '2013'

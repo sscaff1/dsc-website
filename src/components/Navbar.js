@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 import { css } from 'react-emotion';
 import hero from '../img/hero.jpeg';
 import logo from '../img/LOGO.png';
@@ -87,9 +88,15 @@ class Navbar extends Component {
               </div>
               <div className={`navbar-menu${activeClass}`}>
                 <div className="navbar-end">
-                  <a className="navbar-item is-primary">Home</a>
-                  <a className="navbar-item is-primary">About</a>
-                  <a className="navbar-item is-primary">Services</a>
+                  <Link to="/" className="navbar-item is-primary">
+                    Home
+                  </Link>
+                  <Link to="/about" className="navbar-item is-primary">
+                    About
+                  </Link>
+                  <Link to="/" className="navbar-item is-primary">
+                    Services
+                  </Link>
                   <a className="navbar-item is-primary">New Client</a>
                   <a className="navbar-item is-primary">Current Club Projects</a>
                 </div>

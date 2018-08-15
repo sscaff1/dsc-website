@@ -24,7 +24,7 @@ collections:
     folder: 'src/pages/members'
     create: true
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'about' }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'member-section' }
       - { label: Name, name: name, widget: string }
       - { label: Email, name: email, widget: string, required: false }
       - { label: Title, name: title, widget: string }
@@ -61,7 +61,7 @@ collections:
     folder: 'src/pages/services'
     create: true
     fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'service-page' }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'service-section' }
       - { label: title, name: title, widget: string }
       - { label: description, name: body, widget: markdown }
 

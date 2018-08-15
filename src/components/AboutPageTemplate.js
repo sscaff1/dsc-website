@@ -1,32 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Content from './Content'
+import React from 'react';
+import PropTypes from 'prop-types';
+import HeroSection from './HeroSection';
+import MemberTemplate from './MemberTemplate';
 
-const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
-
+const AboutPageTemplate = ({ members }) => {
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
+    <HeroSection title="About Us">
+      <div className="tile is-ancestor">
+        {members.map((person, i) => (
+          <div key={`person-${i}`} className="tile is-parent">
+            <MemberTemplate {...person} />
           </div>
-        </div>
+        ))}
       </div>
-    </section>
-  )
-}
+    </HeroSection>
+  );
+};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
-}
+};
 
-export default AboutPageTemplate
+export default AboutPageTemplate;
