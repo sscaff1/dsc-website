@@ -38,37 +38,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         vision
-        services {
-          title
-          description
-        }
-        options {
-          option
-        }
-        members {
-          name
-          email
-          title
-          bio
-          photo
-          qualifications
-          education {
-            order
-            college
-            location
-            degree
-            concentration
-            timeframe
-          }
-          awards {
-            name
-            timeframe
-          }
-          languages {
-            name
-            proficiency
-          }
-        }
       }
     }
   }
