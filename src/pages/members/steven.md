@@ -1,9 +1,10 @@
 ---
-templateKey: 'member'
-awards:
-  - name: US Soccer Development Academy U15 Coach of The Year Eastern Conference
-    timeframe: 2017/2018
-
+templateKey: member
+name: John Bello
+email: john@districtsportsconsulting.com
+title: Owner
+photo: /img/john-photo.jpeg
+qualifications: 'USSF A-Youth License:  Completed January 2018'
 education:
   - college: College of Charleston
     concentration: Physical Education with a concentration in Exercise Science
@@ -11,14 +12,12 @@ education:
     location: 'Charleston, SC'
     order: 1
     timeframe: 2005-2010
-email: john@districtsportsconsulting.com
+awards:
+  - name: US Soccer Development Academy U15 Coach of The Year Eastern Conference
+    timeframe: 2017/2018
 languages:
   - name: English
     proficiency: 'Native reading, written, and oral fluency'
-name: John Bello
-photo: /img/chemex.jpg
-qualifications: 'USSF A-Youth License:  Completed January 2018'
-title: Owner
 ---
 
 John began his professional career in sport working with D.C. United
