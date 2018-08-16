@@ -5,7 +5,7 @@ const Project = ({ title, description }) => {
     <div className="box">
       <div>
         <p className="title is-3">{title}</p>
-        <p dangerouslySetInnerHTML={{ __html: description }} />
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
   );

@@ -52,7 +52,7 @@ const MemberTemplate = ({
         </div>
 
         <div className="content">
-          <p dangerouslySetInnerHTML={{ __html: bio }} />
+          <div dangerouslySetInnerHTML={{ __html: bio }} />
           <AboutSection title="Qualifications" childProp={qualifications}>
             <p className="is-marginless is-paddingless">{qualifications}</p>
           </AboutSection>

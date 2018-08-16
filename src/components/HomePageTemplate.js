@@ -5,7 +5,7 @@ import Service from './Service';
 const HomePageTemplate = ({ vision, services }) => (
   <>
     <HeroSection title="Vision" containerClass="has-text-centered" wrapClass="is-primary">
-      <p className="is-size-5" dangerouslySetInnerHTML={{ __html: vision }} />
+      <div className="is-size-5" dangerouslySetInnerHTML={{ __html: vision }} />
     </HeroSection>
     {services.length > 0 && (
       <div id="services">

@@ -5,7 +5,7 @@ const Service = ({ service: { title, description } }) => {
     <div className="tile box">
       <div>
         <p className="title is-5 has-text-grey has-text-centered">{title}</p>
-        <p dangerouslySetInnerHTML={{ __html: description }} />
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </div>
     </div>
   );
