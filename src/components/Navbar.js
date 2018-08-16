@@ -43,24 +43,33 @@ class Navbar extends Component {
     backgroundColorTransparency: 0,
   };
 
+  scrollFactor = 1.3;
+
   componentDidMount() {
-    const SCROLL_FACTOR = 1.3;
-    document.addEventListener('scroll', () => {
-      const { backgroundColorTransparency } = this.setState;
-      const currentScroll = window.document.documentElement.scrollTop * SCROLL_FACTOR;
-      if (currentScroll >= 255) {
-        if (backgroundColorTransparency === 1) {
-          return;
-        }
-        return this.setState({ backgroundColorTransparency: 1 });
-      }
-      this.setState({
-        backgroundColorTransparency: currentScroll / 255,
-      });
-    });
+    const SCROLL_FACTOR = this.scrollFactor;
+    document.addEventListener('scroll', this.handleScroll);
     const currentScroll = window.document.documentElement.scrollTop * SCROLL_FACTOR;
     this.setState({ backgroundColorTransparency: currentScroll / 255 });
   }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    const SCROLL_FACTOR = this.scrollFactor;
+    const { backgroundColorTransparency } = this.setState;
+    const currentScroll = window.document.documentElement.scrollTop * SCROLL_FACTOR;
+    if (currentScroll >= 255) {
+      if (backgroundColorTransparency === 1) {
+        return;
+      }
+      return this.setState({ backgroundColorTransparency: 1 });
+    }
+    this.setState({
+      backgroundColorTransparency: currentScroll / 255,
+    });
+  };
 
   handleMobileClick = () => {
     this.setState(({ isActive }) => ({ isActive: !isActive }));
