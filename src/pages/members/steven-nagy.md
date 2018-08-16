@@ -3,6 +3,7 @@ templateKey: member-section
 name: Steven Nagy
 email: ''
 title: Self Regulation Coach
+photo: /img/steven.jpeg
 education:
   - college: George Mason University
     concentration: Educational Leadership
