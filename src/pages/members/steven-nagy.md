@@ -1,8 +1,8 @@
 ---
 templateKey: member-section
-awards:
-  - name: Distinguished Achievement Award for Educational Excellence presented by The Association of Educational Publishers for Sweetgrass Science article, recognized by the National Science Teachers Association
-    timeframe: '2013'
+name: Steven Nagy
+email: ''
+title: Self Regulation Coach
 education:
   - college: George Mason University
     concentration: Educational Leadership
@@ -22,14 +22,17 @@ education:
     location: 'Charleston, SC'
     order: 3
     timeframe: May 2009
-email: steven@districtsportsconsulting.com
+awards:
+  - name: >-
+      Distinguished Achievement Award for Educational Excellence presented by
+      The Association of Educational Publishers for Sweetgrass Science article,
+      recognized by the National Science Teachers Association
+    timeframe: '2013'
 languages:
   - name: English
     proficiency: 'Native reading, written, and oral fluency'
   - name: Spanish
     proficiency: 'Native reading, written, and oral fluency'
-name: Steven Nagy
-title: Self Regulation Coach
 ---
 
 Originally from Cartagena Colombia, Nagy grew up playing soccer at Colegio
