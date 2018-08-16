@@ -36,7 +36,11 @@ const Layout = ({ children, contactFormIsPrimary, heroBodyTitle }) => (
             Contact Information:
           </h4>
           <div className="content">
-            <a href="mailto:john@districtsportsconsulting.com" className="title is-5 has-text-link">
+            <a
+              href="mailto:john@districtsportsconsulting.com"
+              className="title is-size-6 has-text-link"
+              style={{ whiteSpace: 'noWrap' }}
+            >
               <i className="fas fa-envelope" />
               &nbsp;&nbsp;john@districtsportsconsulting.com
             </a>

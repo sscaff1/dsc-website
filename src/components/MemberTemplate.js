@@ -2,12 +2,12 @@ import React from 'react';
 
 const AboutSection = ({ title, childProp, children }) =>
   childProp ? (
-    <>
+    <div style={{ paddingBottom: '10px' }}>
       <p className="has-text-weight-bold" style={{ marginBottom: 0 }}>
         <u>{title}</u>
       </p>
       {children}
-    </>
+    </div>
   ) : null;
 
 const MemberTemplate = ({
