@@ -29,6 +29,11 @@ const styles = {
       img {
         max-height: 150px;
       }
+      @media (max-width: 750px) {
+        img {
+          padding-top: 20px;
+        }
+      }
     }
   `,
 };

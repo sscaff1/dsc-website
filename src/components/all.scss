@@ -15,6 +15,12 @@ $navbar-item-hover-background-color: transparent;
   border-bottom: 2px solid $primary;
 }
 
+@media (max-width: 900px) {
+  .navbar-brand {
+    background: $white;
+  }
+}
+
 .navbar-brand.is-active {
   background: $white;
 }
