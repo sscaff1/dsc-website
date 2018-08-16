@@ -30,9 +30,7 @@ awards:
       recognized by the National Science Teachers Association
     timeframe: '2013'
 languages:
-  - name: English
-    proficiency: 'Native reading, written, and oral fluency'
-  - name: Spanish
+  - name: Bilingual (English & Spanish)
     proficiency: 'Native reading, written, and oral fluency'
 ---
 
