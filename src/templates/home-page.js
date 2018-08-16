@@ -12,6 +12,7 @@ export default class IndexPage extends React.Component {
         allMarkdownRemark: { edges },
       },
     } = this.props;
+    console.log(this.props);
     const services = edges.map(({ node }) => {
       const { title } = node.frontmatter;
       return {
