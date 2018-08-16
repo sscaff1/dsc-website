@@ -15,9 +15,7 @@ education:
 awards:
   - name: US Soccer Development Academy U15 Coach of The Year Eastern Conference
     timeframe: 2017/2018
-languages:
-  - name: English
-    proficiency: 'Native reading, written, and oral fluency'
+languages: []
 ---
 
 John began his professional career in sport working with D.C. United
