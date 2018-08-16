@@ -21,7 +21,7 @@ export default class IndexPage extends React.Component {
     });
 
     return (
-      <Layout contactFormIsPrimary>
+      <Layout>
         <HomePageTemplate vision={html} services={services} />
       </Layout>
     );

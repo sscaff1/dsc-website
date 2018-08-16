@@ -14,7 +14,7 @@ const AboutPage = ({
     bio: edge.node.html,
   }));
   return (
-    <Layout>
+    <Layout heroBodyTitle="About Us">
       <AboutPageTemplate members={members} />
     </Layout>
   );
@@ -28,7 +28,10 @@ export default AboutPage;
 
 export const aboutPageQuery = graphql`
   query AboutPage {
-    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "member-section" } } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "member-section" } } }
+      sort: { order: ASC, fields: [frontmatter___title] }
+    ) {
       edges {
         node {
           html

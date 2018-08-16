@@ -23,6 +23,21 @@ $navbar-item-hover-background-color: transparent;
   font-family: $family-primary;
 }
 
-ol {
+p {
+  margin-bottom: 10px;
+}
+
+ol,
+ul {
   padding-left: 25px;
+}
+
+ul {
+  list-style: disc;
+}
+
+img.is-rounded {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

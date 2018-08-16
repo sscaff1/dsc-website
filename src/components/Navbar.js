@@ -34,6 +34,10 @@ const styles = {
 };
 
 class Navbar extends Component {
+  static defaultProps = {
+    heroBodyTitle: '',
+  };
+
   state = {
     isActive: false,
     backgroundColorTransparency: 0,
@@ -64,6 +68,7 @@ class Navbar extends Component {
 
   render() {
     const { backgroundColorTransparency, isActive } = this.state;
+    const { heroBodyTitle } = this.props;
     const activeClass = isActive ? ' is-active' : '';
     return (
       <section className={`hero is-medium ${styles.heroSection}`}>
@@ -74,9 +79,9 @@ class Navbar extends Component {
           >
             <div className="container">
               <div className={`navbar-brand${activeClass}`}>
-                <a className="navbar-item">
+                <Link to="/" className="navbar-item">
                   <img src={smallLogo} alt="Logo" />
-                </a>
+                </Link>
                 <span
                   className={`navbar-burger burger${activeClass}`}
                   onClick={this.handleMobileClick}
@@ -94,11 +99,15 @@ class Navbar extends Component {
                   <Link to="/about" className="navbar-item is-primary">
                     About
                   </Link>
-                  <Link to="/" className="navbar-item is-primary">
+                  <Link to="/#services" className="navbar-item is-primary">
                     Services
                   </Link>
-                  <a className="navbar-item is-primary">New Client</a>
-                  <a className="navbar-item is-primary">Current Club Projects</a>
+                  <Link to="/new-client" className="navbar-item is-primary">
+                    New Client
+                  </Link>
+                  <Link to="/projects" className="navbar-item is-primary">
+                    Current Club Projects
+                  </Link>
                 </div>
               </div>
             </div>
@@ -107,7 +116,13 @@ class Navbar extends Component {
 
         <div className="hero-body">
           <div className="container has-text-centered">
-            <img src={logo} alt="Logo" />
+            {heroBodyTitle ? (
+              <h1 className="is-size-1  is-primary-font" style={{ minHeight: '150px' }}>
+                {heroBodyTitle}
+              </h1>
+            ) : (
+              <img src={logo} alt="Logo" />
+            )}
           </div>
         </div>
       </section>

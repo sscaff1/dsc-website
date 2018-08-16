@@ -43,9 +43,11 @@ const MemberTemplate = ({
             <p className="title is-4">
               {name} - {title}
             </p>
-            <p className="subtitle is-6">
-              <a href={`mailto:${email}`}>{email}</a>
-            </p>
+            {email && (
+              <p className="subtitle is-6">
+                <a href={`mailto:${email}`}>{email}</a>
+              </p>
+            )}
           </div>
         </div>
 

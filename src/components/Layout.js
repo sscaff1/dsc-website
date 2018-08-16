@@ -15,7 +15,7 @@ const options = [
   'Other',
 ];
 
-const TemplateWrapper = ({ children, contactFormIsPrimary }) => (
+const Layout = ({ children, contactFormIsPrimary, heroBodyTitle }) => (
   <div>
     <Helmet title="District Sports Consulting">
       <link
@@ -25,7 +25,7 @@ const TemplateWrapper = ({ children, contactFormIsPrimary }) => (
         crossorigin="anonymous"
       />
     </Helmet>
-    <Navbar />
+    <Navbar heroBodyTitle={heroBodyTitle} />
     <div>{children}</div>
     <HeroSection title="Contact Us" wrapClass={contactFormIsPrimary ? 'is-primary' : ''}>
       <div className="columns container" style={{ marginTop: '1.5rem' }}>
@@ -48,4 +48,8 @@ const TemplateWrapper = ({ children, contactFormIsPrimary }) => (
   </div>
 );
 
-export default TemplateWrapper;
+Layout.defaultProps = {
+  heroBodyTitle: '',
+};
+
+export default Layout;
