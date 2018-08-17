@@ -44,8 +44,10 @@ class ContactForm extends Component {
         className="column box"
         method="POST"
         data-netlify="true"
+        data-netlify-honeypot="bot-field"
         onSubmit={this.handleSubmit}
       >
+        <input type="hidden" name="form-name" value="contact" />
         <div className="field">
           <div className="control has-icons-left">
             <input
@@ -97,7 +99,6 @@ class ContactForm extends Component {
             />
           </div>
         </div>
-        <div data-netlify-recaptcha />
         <input type="submit" className="button is-large is-fullwidth is-primary" value="Submit" />
       </form>
     );
