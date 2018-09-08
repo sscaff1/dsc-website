@@ -20,6 +20,7 @@ const MemberTemplate = ({
   awards,
   languages,
   email,
+  displayHtmlDirectly,
 }) => {
   return (
     <div className="card">
@@ -52,7 +53,11 @@ const MemberTemplate = ({
         </div>
 
         <div className="content">
-          <div dangerouslySetInnerHTML={{ __html: bio }} />
+          {displayHtmlDirectly ? (
+            <div>{bio}</div>
+          ) : (
+            <div dangerouslySetInnerHTML={{ __html: bio }} />
+          )}
           <AboutSection title="Qualifications" childProp={qualifications}>
             <p className="is-marginless is-paddingless">{qualifications}</p>
           </AboutSection>
@@ -92,6 +97,7 @@ MemberTemplate.defaultProps = {
   education: [],
   awards: [],
   languages: [],
+  displayHtmlDirectly: false,
 };
 
 export default MemberTemplate;

@@ -1,12 +1,11 @@
 import React from 'react';
 import HeroSection from './HeroSection';
 import Service from './Service';
+import Vision from './Vision';
 
 const HomePageTemplate = ({ vision, services }) => (
   <>
-    <HeroSection title="Vision" containerClass="has-text-centered" wrapClass="is-primary">
-      <div className="is-size-5" dangerouslySetInnerHTML={{ __html: vision }} />
-    </HeroSection>
+    <Vision vision={vision} />
     {services.length > 0 && (
       <div id="services">
         <HeroSection title="What We Do">
@@ -25,6 +24,7 @@ const HomePageTemplate = ({ vision, services }) => (
 
 HomePageTemplate.defaultProps = {
   services: [],
+  displayHtmlDirectly: false,
 };
 
 export default HomePageTemplate;

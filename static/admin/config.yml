@@ -6,19 +6,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'blog'
-    label: 'Blog'
-    folder: 'src/pages/blog'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    fields:
-      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Tags', name: 'tags', widget: 'list' }
-
   - name: 'member'
     label: 'Team Members'
     folder: 'src/pages/members'
@@ -35,7 +22,6 @@ collections:
         name: education
         widget: list
         fields:
-          - { label: Order, name: order, widget: number, valueType: int }
           - { label: College, name: college, widget: string }
           - { label: Location, name: location, widget: string }
           - { label: Degree, name: degree, widget: string }
@@ -78,7 +64,7 @@ collections:
     label: 'Pages'
     files:
       - file: 'src/pages/index.md'
-        label: 'Home'
+        label: 'Vision'
         name: 'home'
         slug: '/'
         fields:
