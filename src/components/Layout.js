@@ -24,6 +24,8 @@ const Layout = ({ children, contactFormIsPrimary, heroBodyTitle }) => (
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous"
       />
+      <meta name="description" content="Discover how we can help enhance player development through individual training, video analysis, off field performance coaching or club curriculum development for soccer players and organizations." />
+      <meta name="keywords" content="Sports Consulting, Soccer expert, soccer consulting, soccer coach help, sports program development, Soccer Curriculum, soccer trainer DC, individual coaching,  private soccer coach, performance coaching, sports psychology soccer, life coaching" />
     </Helmet>
     <Navbar heroBodyTitle={heroBodyTitle} />
     <div>{children}</div>
