@@ -1,6 +1,6 @@
 ---
 templateKey: service-section
-title: Club curriculum & coach development
+title: Club curriculum & Coach development
 ---
 Knowledge integration takes time, energy, varied activities and many opportunities to make connections from one topic to another. We believe there are four components to long term learning:
 
