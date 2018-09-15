@@ -9,6 +9,7 @@
     "emotion-server": "^9.2.6",
     "gatsby": "next",
     "gatsby-plugin-emotion": "next",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-netlify": "next",
     "gatsby-plugin-netlify-cms": "next",
     "gatsby-plugin-react-helmet": "next",
