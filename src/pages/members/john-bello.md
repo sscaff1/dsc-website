@@ -10,14 +10,12 @@ education:
     concentration: Physical Education with a concentration in Exercise Science
     degree: Bachelor of Science
     location: 'Charleston, SC'
-    order: 1
     timeframe: 2005-2010
 awards:
   - name: US Soccer Development Academy U15 Coach of The Year Eastern Conference
     timeframe: 2017/2018
 languages: []
 ---
-
 John began his professional career in sport working with D.C. United
 Academy as an age group head coach within Major League Soccer. He has
 worked in all levels of youth development including grassroots
