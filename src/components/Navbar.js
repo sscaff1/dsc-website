@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import hero from '../img/hero.jpeg';
 import logo from '../img/LOGO.png';
 import smallLogo from '../img/LOGO1.png';
@@ -53,7 +53,8 @@ class Navbar extends Component {
   componentDidMount() {
     const SCROLL_FACTOR = this.scrollFactor;
     document.addEventListener('scroll', this.handleScroll);
-    const currentScroll = window.document.documentElement.scrollTop * SCROLL_FACTOR;
+    const currentScroll =
+      window.document.documentElement.scrollTop * SCROLL_FACTOR;
     this.setState({ backgroundColorTransparency: currentScroll / 255 });
   }
 
@@ -64,7 +65,8 @@ class Navbar extends Component {
   handleScroll = () => {
     const SCROLL_FACTOR = this.scrollFactor;
     const { backgroundColorTransparency } = this.setState;
-    const currentScroll = window.document.documentElement.scrollTop * SCROLL_FACTOR;
+    const currentScroll =
+      window.document.documentElement.scrollTop * SCROLL_FACTOR;
     if (currentScroll >= 255) {
       if (backgroundColorTransparency === 1) {
         return;
@@ -89,7 +91,9 @@ class Navbar extends Component {
         <div className="hero-head">
           <nav
             className="navbar is-fixed-top"
-            style={{ background: `rgba(255, 255, 255, ${backgroundColorTransparency})` }}
+            style={{
+              background: `rgba(255, 255, 255, ${backgroundColorTransparency})`,
+            }}
           >
             <div className="container">
               <div className={`navbar-brand${activeClass}`}>
@@ -131,7 +135,10 @@ class Navbar extends Component {
         <div className="hero-body">
           <div className="container has-text-centered">
             {heroBodyTitle ? (
-              <h1 className="is-size-1  is-primary-font" style={{ minHeight: '150px' }}>
+              <h1
+                className="is-size-1  is-primary-font"
+                style={{ minHeight: '150px' }}
+              >
                 {heroBodyTitle}
               </h1>
             ) : (

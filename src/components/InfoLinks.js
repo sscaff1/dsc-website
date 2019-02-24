@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 
 const icons = ['fas fa-envelope', 'fab fa-imdb', 'fab fa-youtube'];
 
