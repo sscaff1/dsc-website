@@ -51,10 +51,7 @@ export const aboutPageQuery = graphql`
             }
             email
             photo
-            languages {
-              name
-              proficiency
-            }
+            
           }
         }
       }
